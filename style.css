@@ -1,0 +1,395 @@
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+ .hero .nav-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hero .nav-buttons .btn {
+  background: #e63946;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: background 0.3s ease;
+}
+
+.hero .nav-buttons .btn:hover {
+  background: #c0303a;
+}
+
+@media (max-width: 600px) {
+  .hero .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero .nav-buttons .btn {
+    width: 80%;
+    text-align: center;
+  }
+   .menu-toggle {
+    display: block;
+  }
+
+  .nav-buttons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .nav-buttons.show {
+    display: flex;
+  }
+
+  .nav-buttons .btn {
+    width: 80%;
+    text-align: center;
+  }
+}
+.confirmation-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+ .hero {
+  height: 60vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://images.unsplash.com/photo-1606214174587-4160a07ff8ac') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+  .hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.3em;
+  }
+
+  }
+  .info, .contact, .services {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .info ul {
+    list-style: none;
+    padding: 0;
+  }
+  .info li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .services h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+  }
+  .service {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  .service h3 {
+    color: #2a9d8f;
+  
+  max-width: 600px;
+  margin: auto;
+  display: block;
+  width: 100%;}
+ 
+  .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 15px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact button {
+  padding: 12px;
+  background: #2a9d8f;
+  color: white;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background: #21867a;
+}
+
+</style>
+/* General Body Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1606214174587-4160a07ff8ac') no-repeat center center/cover;
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 5px solid #2a9d8f;
+}
+
+.hero h1 {
+  font-size: 4em;
+  margin-bottom: 0.3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.hero .btn {
+  background: #e63946;
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+.hero .btn:hover {
+  background: #c0303a;
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Info Section */
+.info, .contact, .services {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1em;
+}
+
+.info li strong {
+  color: #2a9d8f;
+}
+
+/* Services Section */
+.services h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.service {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.service h3 {
+  color: #2a9d8f;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.contact-form button {
+  padding: 15px;
+  font-size: 1.1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #2a9d8f;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form input[type="date"] {
+  width: 100%;
+  padding: 14px;
+}
+
+.contact button {
+  background: #2a9d8f;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact button:hover {
+  background: #21867a;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #222;
+  color: #ccc;
+  font-size: 1.1em;
+}
+
+footer a {
+  color: #2a9d8f;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.page-up {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #2a9d8f;
+  color: white;
+  font-size: 24px;
+  padding: 12px 16px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.page-up:hover {
+  background-color: #21867a;
+  transform: scale(1.1);
+}
+.required {
+  color: red;
+  font-weight: bold;
+}

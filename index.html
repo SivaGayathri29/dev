@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Barber & Beauty Salon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Elite Barber & Beauty Salon</h1>
+    <p>Where style meets elegance<p>
+    <div class="nav-buttons">
+  <a href="#about" class="btn">About</a>
+  <a href="#services" class="btn">Services</a>
+  <a href="#book" class="btn">Book Now</a>
+</div>
+	
+  </section>
+
+  <!-- Business Info (About Us) -->
+  <section class="info" id="about">
+    <h1>About Us</h1>
+    <ul>
+      <li><strong>Category:</strong> Barber Shop</li>
+      <li><strong>Rating:</strong> 4.6 stars (116+ reviews)</li>
+      <li><strong>Status:</strong> Open ⋅ Closes 7 pm</li>
+      <li><strong>Location:</strong> 500 N Bell Ave #109, Denton, TX 76209</li>
+      <li><strong>Phone:</strong> +1 940-612-9127</li>
+      <li><strong>Directions:</strong> <a href="https://www.google.com/maps?q=500+N+Bell+Ave+%23109,+Denton,+TX+76209" target="_blank">Google Maps</a></li>
+      <li><strong>Customer Comment:</strong> "Affordable compared to other barbershops with better services."</li>
+    </ul>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service">
+        <h3>Haircut</h3>
+        <p>Expertly crafted cuts tailored to your personal style and preference.</p>
+      </div>
+      <div class="service">
+        <h3>Beard Trim</h3>
+        <p>Precision beard grooming to give you a sharp and polished look.</p>
+      </div>
+      <div class="service">
+        <h3>Hair Coloring</h3>
+        <p>Professional hair coloring services using top-quality products for vibrant results.</p>
+      </div>
+      <div class="service">
+        <h3>Facials</h3>
+        <p>Relaxing and revitalizing facials to rejuvenate your skin.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact" id="book">
+    <h1>Book an Appointment</h1>
+    <form action="submit.php" method="POST" id="contactForm" class="contact-form">
+	<div id="confirmation" class="confirmation-message" style="display: none;">
+  ✅ Message sent successfully!
+</div>
+
+      <label for="name">Name <span class="required">*</span></label>
+<input type="text" id="name" name="name" required />
+
+<label for="phone">Phone <span class="required">*</span></label>
+<input type="tel" id="phone" name="phone" required />
+
+<label for="service">Select a Service <span class="required">*</span></label>
+<select name="service" id="service" required>
+  <option value="">-- Choose a service --</option>
+  <option value="Haircut">Haircut</option>
+  <option value="Beard Trim">Beard Trim</option>
+  <option value="Beard Trim">Facial</option>
+  <option value="Beard Trim">Kid Haicut</option>
+  <option value="Beard Trim">Hair Coloring</option>
+</select>
+
+<label for="date">Preferred Date <span class="required">*</span></label>
+<input type="date" id="date" name="date" required />
+
+<label for="message">Message</label>
+<textarea name="message" id="message" ></textarea>
+ <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Elite Barber & Beauty Salon</p>
+  </footer>
+  <!-- Page Up Button -->
+<a href="#" class="page-up" id="pageUpBtn" title="Back to top">&#8679;</a>
+<script>
+  const pageUpBtn = document.getElementById("pageUpBtn");
+
+  // Show the button after scrolling down 300px
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      pageUpBtn.style.display = "block";
+    } else {
+      pageUpBtn.style.display = "none";
+    }
+  };
+</script>
+<script>
+  const form = document.getElementById("contactForm");
+  const confirmation = document.getElementById("confirmation");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Send form using fetch (AJAX)
+    const formData = new FormData(form);
+    fetch("contact.php", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      // Show confirmation message
+      confirmation.style.display = "block";
+
+      // Clear the form
+      form.reset();
+
+      // Hide the message after 3 seconds
+      setTimeout(() => {
+        confirmation.style.display = "none";
+      }, 3000);
+    })
+    .catch(error => {
+      confirmation.innerText = "❌ Failed to send. Try again.";
+      confirmation.style.color = "red";
+      confirmation.style.display = "block";
+    });
+  });
+</script>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("navButtons");
+    nav.classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
