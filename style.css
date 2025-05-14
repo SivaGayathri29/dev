@@ -35,7 +35,12 @@
     align-items: center;
     gap: 12px;
   }
+ .hero h1 {
+  font-size: 1rem;
+  margin-bottom: 0.3em;
+  font-weight: 200;
 
+}
   .hero .nav-buttons .btn {
     width: 80%;
     text-align: center;
